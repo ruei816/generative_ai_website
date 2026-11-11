@@ -1,8 +1,8 @@
-# PaperNote｜Digital Knowledge Hub
+# PaperNote｜論文筆記助理
 
 PaperNote 是一個以繁體中文介面呈現的英文論文閱讀與知識整理網站。網站使用原生 HTML、CSS 與 JavaScript 建置，將每篇論文整理成獨立閱讀頁，提供摘要、依原文編排的章節重點、研究圖表與實驗數據。
 
-首頁採用 **Digital Knowledge Hub** 的未來科技文案，並保留復古像素風格的視覺系統。網站目前收錄三篇論文：Dinomaly（CVPR 2025）、GauCho（CVPR 2025）及 Gradient Decomposition and Alignment for Incremental Object Detection（ICCV 2025）。
+網站目前收錄三篇論文：Dinomaly（CVPR 2025）、GauCho（CVPR 2025）及 Gradient Decomposition and Alignment for Incremental Object Detection（ICCV 2025）。
 
 ## 專案目前內容
 
@@ -18,7 +18,7 @@ PaperNote 是一個以繁體中文介面呈現的英文論文閱讀與知識整�
 
 - 首頁顯示實際收錄的論文卡片，桌面版雙欄、手機版單欄。
 - 可依論文標題、作者及英文關鍵字即時搜尋。
-- 論文卡片整張皆可點擊進入對應詳細頁，不另設「查看論文資訊」連結。
+- 論文卡片整張皆可點擊進入對應詳細頁。
 - 論文詳細頁以章節標籤切換內容；初次開啟只顯示摘要，選取章節後在同一內容面板替換。
 - 依各篇原始論文的實際章節整理內容，不共用固定章節模板。
 - 重要原始圖表放在相關章節，支援點擊放大。
@@ -66,17 +66,14 @@ PaperNote/
 2. 以瀏覽器開啟根目錄 `index.html`。
 3. 點選首頁論文卡片即可進入論文詳細頁。
 
-本專案不需要 Node.js、npm、框架或建置流程。首頁索引由 `assets/js/papers.js` 以一般 `<script>` 載入，避免在 `file://` 模式使用 `fetch()` 讀取 JSON 時遇到瀏覽器 CORS 限制。
-
 ## 如何新增一篇論文
 
-1. 使用最新版完整專案 ZIP，不可從舊版專案開始，以免覆蓋已累積內容。
-2. 提供論文 PDF；若只提供純筆記，必須同時指出對應的論文標題。
-3. AI 必須先閱讀 `AGENTS.md`，再檢查現有資料夾、索引與論文，確認不是重複收錄。
-4. 依新論文 PDF 的實際書目資訊及章節結構建立獨立資料夾，不可直接複製其他論文的章節內容或數據。
-5. 建立該篇論文的 `index.html`、`paper.pdf`、`notes.json` 與必要圖表；更新 `assets/js/papers.js` 及 `data/papers.json`。
-6. 同步更新 `README.md`、`AGENTS.md`（若新增通用規則），並檢查首頁卡片、相對路徑、章節切換及圖表燈箱。
-7. 完成檢查後回傳包含全部檔案的完整 ZIP。後續更新一律以最新 ZIP 為起點。
+1. 提供論文 PDF；若只提供純筆記，必須同時指出對應的論文標題。
+2. AI 必須先閱讀 `AGENTS.md`，再檢查現有資料夾、索引與論文，確認不是重複收錄。
+3. 依新論文 PDF 的實際書目資訊及章節結構建立獨立資料夾，不可直接複製其他論文的章節內容或數據。
+4. 建立該篇論文的 `index.html`、`paper.pdf`、`notes.json` 與必要圖表；更新 `assets/js/papers.js` 及 `data/papers.json`。
+5. 同步更新 `README.md`、`AGENTS.md`（若新增通用規則），並檢查首頁卡片、相對路徑、章節切換及圖表燈箱。
+6. 完成檢查後回傳包含全部檔案的完整 ZIP。後續更新一律以最新 ZIP 為起點。
 
 ### PDF 圖表擷取完整性要求
 
@@ -120,16 +117,6 @@ PaperNote/
 - 整張卡片是唯一點擊區域；不另放「查看論文資訊」等文字連結。
 - 卡片內所有文字統一為 15px。
 - 桌面版雙欄、手機版單欄。
-
-## GitHub Pages 發布
-
-1. 將完整 `PaperNote` 專案內容上傳至 GitHub Repository。
-2. 開啟 Repository 的 **Settings → Pages**。
-3. 在 Build and deployment 選擇 **Deploy from a branch**。
-4. 選擇 `main` 分支及 `/ (root)` 資料夾並儲存。
-5. 等待 GitHub Pages 部署完成，再以公開網址測試首頁、論文頁、PDF 與圖表。
-
-發布前需確認所有內部連結使用適用於 GitHub Pages 的相對路徑；不可只測試本機 `file://`。
 
 ## 重要限制
 
