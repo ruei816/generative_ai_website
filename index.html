@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PaperNote 個人英文論文閱讀與筆記知識庫">
+  <title>PaperNote｜論文筆記庫</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=20261110-card-clickable-v2">
+  <script src="assets/js/papers.js"></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header title-block">
+      <a class="brand" href="index.html" aria-label="PaperNote 首頁">✦ PAPERNOTE</a>
+      <span class="header-caption">MY RESEARCH LIBRARY SYSTEM READY</span>
+    </header>
+
+    <main>
+      <section class="hero-panel title-block" aria-labelledby="page-title">
+        <div class="hero-kicker">▣ SYSTEM.exe —□×</div>
+        <p>SYSTEM ONLINE / KNOWLEDGE HUB</p>
+        <h1 id="page-title">知識正在載入，<br class="mobile-break">探索即將開始。</h1>
+        <p>一站式論文管理與閱讀系統，讓研究資訊更容易被整理、搜尋與重新發現。</p>
+        <div class="hero-decoration">✦ ACCESS ◆ PROCESS ◆ CONNECT</div>
+        <p class="hero-decoration">✧ PAPER NOTE ✧ KNOWLEDGE AT YOUR FINGERTIPS</p>
+      </section>
+
+      <section class="library-section" aria-labelledby="library-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">01 / PAPER COLLECTION</p>
+            <h2 id="library-title">論文收藏 ✦</h2>
+          </div>
+          <span class="section-note">LATEST ADDED FIRST</span>
+        </div>
+
+        <label class="search-box" for="paper-search">
+          <span aria-hidden="true">⌕</span>
+          <input id="paper-search" type="search" placeholder="搜尋論文標題、作者或關鍵字…" autocomplete="off">
+          <kbd>SEARCH ↵</kbd>
+        </label>
+
+        <div class="card" aria-live="polite">
+          <div class="card-topline">
+            <span class="badge">▦ ALL DOCUMENTS</span>
+            <span id="paper-count" class="card-index">0 FILES FOUND</span>
+          </div>
+          <div id="paper-grid" class="paper-grid" hidden></div>
+          <div id="empty-state" class="empty-state">
+            <div class="empty-icon" aria-hidden="true">▤</div>
+            <h3>你的論文收藏從這裡開始</h3>
+            <p>目前還沒有收錄論文。將專案 ZIP 提供給 AI 聊天室，再上傳第一篇論文 PDF 或指定既有論文的筆記，即可開始建立你的閱讀資料庫。</p>
+            <span class="empty-stamp">LIBRARY IS READY · 0 PAPERS</span>
+          </div>
+          <p id="no-results" class="no-results" hidden>找不到符合條件的論文，請嘗試其他標題、作者或關鍵字。</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>PaperNote © 2026</span>
+      <span>MADE FOR CURIOUS MINDS ✦</span>
+    </footer>
+  </div>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="回到頁面頂部" title="回到頁面頂部">↑</button>
+</body>
+</html>
