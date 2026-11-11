@@ -1,0 +1,105 @@
+{
+  "paperId": "gda-iod-2025",
+  "personalNotes": [],
+  "noteReview": [],
+  "updateHistory": [
+    {
+      "date": "2026-11-11",
+      "type": "新增",
+      "summary": "依據使用者提供的 ICCV 2025 原始 PDF，新增論文書目、首頁最下方卡片、獨立詳細頁、原始 PDF、章節重點及原始圖表裁切。"
+    }
+  ],
+  "chapterNotes": [
+    {
+      "chapter": "Abstract",
+      "title": "摘要與研究概覽",
+      "keyPoints": [
+        "提出 GDA-IOD 增量物件偵測框架",
+        "GMM 將舊模型預測分為低、中、高信心區域",
+        "以偽標籤梯度對齊整體梯度，降低災難性遺忘"
+      ],
+      "figures": [
+        "Figure 2"
+      ],
+      "metrics": {}
+    },
+    {
+      "chapter": "1",
+      "title": "Introduction",
+      "keyPoints": [
+        "IOD 需在學習新類別時保留舊類別知識",
+        "新階段資料中舊類別物件常缺少標註，可能被誤當背景",
+        "單靠知識蒸餾未必能處理前景類別重疊"
+      ],
+      "figures": [
+        "Figure 1"
+      ],
+      "metrics": {}
+    },
+    {
+      "chapter": "2",
+      "title": "Related Work",
+      "keyPoints": [
+        "增量學習方法包含 regularization、replay 與 dynamic architecture",
+        "IOD 既有方法常使用 knowledge distillation",
+        "本文採用 Faster R-CNN，並以偽標籤及梯度正則化處理遺忘"
+      ],
+      "figures": [],
+      "metrics": {}
+    },
+    {
+      "chapter": "3",
+      "title": "Approach",
+      "keyPoints": [
+        "以舊模型 Mt−1 偵測目前資料中的未標註舊類別物件",
+        "GMM 估計信心分布並建立 GM-Pseudo",
+        "高信心預測作為 pseudo labels；中信心潛在物件排除於 RPN 負樣本",
+        "當整體梯度與舊類別梯度衝突時，投影至舊類別梯度正交方向"
+      ],
+      "figures": [
+        "Figure 2"
+      ],
+      "metrics": {
+        "detector": "Faster R-CNN",
+        "gmm_components": 2
+      }
+    },
+    {
+      "chapter": "4",
+      "title": "Experiments",
+      "keyPoints": [
+        "使用 Pascal VOC2007 與 MS COCO2017",
+        "VOC 多種單步設定下 GDA-IOD 整體 mAP 優於多數比較方法",
+        "多步 VOC 5+5+5+5 設定達 63.5 mAP",
+        "消融實驗顯示 GM-Pseudo 與 GDA 皆有貢獻"
+      ],
+      "figures": [
+        "Table 1",
+        "Table 2",
+        "Table 3",
+        "Table 4",
+        "Figure 3",
+        "Figure 4"
+      ],
+      "metrics": {
+        "VOC_5-5_1-20_mAP": 63.5,
+        "VOC_10-10_old_all": 74.9,
+        "COCO_40+40_AP": 35.3,
+        "COCO_70+10_AP": 36.5,
+        "lambda": 0.6
+      }
+    },
+    {
+      "chapter": "5",
+      "title": "Conclusion",
+      "keyPoints": [
+        "GMM 偽標籤可利用目前影像中未標註的舊類別物件",
+        "梯度分解與對齊可在保留舊知識時促進新類別學習",
+        "方法在 VOC 與 COCO 的多種增量設定展現抗遺忘效果"
+      ],
+      "figures": [],
+      "metrics": {}
+    }
+  ],
+  "source": "User-provided ICCV 2025 paper PDF, 10 pages, proceedings pages 4486–4495. Author code: https://github.com/FHR-L/GDA-IOD."
+}

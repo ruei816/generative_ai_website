@@ -1,0 +1,113 @@
+{
+  "paperId": "dinomaly-2025",
+  "personalNotes": [],
+  "noteReview": [],
+  "updateHistory": [
+    {
+      "date": "2026-11-10",
+      "type": "新增",
+      "summary": "依據使用者提供的 CVPR 2025 原始 PDF，新增 Dinomaly 論文書目、首頁卡片、獨立詳細頁、原始 PDF、章節重點、實驗數據與原始圖表裁切。"
+    }
+  ],
+  "chapterNotes": [
+    {
+      "chapter": "Abstract",
+      "title": "摘要與研究概覽",
+      "keyPoints": [
+        "提出極簡 Transformer 重建式 MUAD 框架",
+        "四項核心設計為 Foundation Transformer、Noisy Bottleneck、Linear Attention、Loose Reconstruction",
+        "MVTec-AD、VisA、Real-IAD image AUROC 為 99.6%、98.7%、89.3%"
+      ],
+      "figures": [
+        "Figure 1"
+      ],
+      "metrics": {
+        "MVTec-AD_image_AUROC": 99.6,
+        "VisA_image_AUROC": 98.7,
+        "Real-IAD_image_AUROC": 89.3
+      }
+    },
+    {
+      "chapter": "1",
+      "title": "Introduction",
+      "keyPoints": [
+        "MUAD 以單一模型處理多類別以降低儲存與部署成本",
+        "多類別正常模式差異可能導致 over-generalization",
+        "Identity mapping 使異常樣本也能被重建，削弱異常分數"
+      ],
+      "figures": [
+        "Figure 1"
+      ],
+      "metrics": {}
+    },
+    {
+      "chapter": "2",
+      "title": "Related Work",
+      "keyPoints": [
+        "UniAD 以 neighbor-masked attention 與 feature jitter 緩解 identity shortcuts",
+        "後續研究探索 synthetic anomalies、VQ、diffusion 與 Mamba",
+        "自監督預訓練 ViT 可提供通用且具辨識力的特徵"
+      ],
+      "figures": [],
+      "metrics": {}
+    },
+    {
+      "chapter": "3",
+      "title": "Method",
+      "keyPoints": [
+        "架構包含 pretrained ViT encoder、MLP bottleneck 與 Transformer decoder",
+        "Dropout 形成 Noisy Bottleneck",
+        "Linear Attention 降低注意力聚焦與直接複製",
+        "Loose Reconstruction 採 group-to-group 監督",
+        "Hard-mining global cosine loss 縮小容易重建特徵點的梯度"
+      ],
+      "figures": [
+        "Figure 2",
+        "Figure 3",
+        "Figure 4"
+      ],
+      "metrics": {
+        "encoder_layers": 12,
+        "decoder_layers": 8,
+        "default_backbone": "DINOv2-Register ViT-Base/14"
+      }
+    },
+    {
+      "chapter": "4",
+      "title": "Experiments",
+      "keyPoints": [
+        "評估 MVTec-AD、VisA、Real-IAD 三個資料集",
+        "比較 image-level 與 pixel-level 七項指標",
+        "消融實驗驗證四個設計元件",
+        "ViT 尺寸與輸入解析度具有擴展性，但計算成本隨模型變大"
+      ],
+      "figures": [
+        "Table 1",
+        "Table 2",
+        "Table 3",
+        "Table 4",
+        "Table 5",
+        "Figure 5"
+      ],
+      "metrics": {
+        "MVTec_AD_image_AUROC": 99.6,
+        "VisA_image_AUROC": 98.7,
+        "Real_IAD_image_AUROC": 89.3,
+        "ViT_Large_params_M": 275.3,
+        "ViT_Large_throughput_Im_s": 24.2
+      }
+    },
+    {
+      "chapter": "5",
+      "title": "Conclusion",
+      "keyPoints": [
+        "四項簡潔設計提升 MUAD 表現",
+        "Dinomaly 在三個資料集上具競爭力",
+        "模型規模與輸入尺寸可依計算資源擴展"
+      ],
+      "figures": [],
+      "metrics": {}
+    }
+  ],
+  "source": "User-provided CVPR 2025 PDF, DOI 10.1109/CVPR52734.2025.01900; main paper pages 1–11."
+}
